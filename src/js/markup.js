@@ -1,5 +1,5 @@
 import galleryTmp from "../templates/gallery-template.hbs";
-import refs from "./refs";
+import refs from "./refs.js";
 
 function makeGallery(data) {
   const markupGallery = galleryTmp(data);

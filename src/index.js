@@ -5,6 +5,7 @@ import "./js/ligthbox.js";
 import apiService from "./js/apiService.js";
 import "@pnotify/core/dist/PNotify.css";
 import "@pnotify/core/dist/BrightTheme.css";
+import { search, matches } from "./js/notification.js";
 import { error } from "@pnotify/core/";
 
 function saerchImg(event) {
@@ -13,10 +14,7 @@ function saerchImg(event) {
   apiService.query = form.elements.query.value;
   refs.gallery.innerHTML = "";
   if (refs.input.elements.query.value === "") {
-    error({
-      text: "Please, enter something to search!",
-      delay: 2000,
-    });
+    error(search);
   }
 
   apiService.resetPage();
@@ -26,10 +24,7 @@ function saerchImg(event) {
       makeGallery(hits);
       refs.loadBtn.classList.remove("is-hidden");
       if (hits.length === 0) {
-        error({
-          text: "No matches found. Please, try again!",
-          delay: 2000,
-        });
+        error(matches);
         refs.loadBtn.classList.add("is-hidden");
       }
     });
