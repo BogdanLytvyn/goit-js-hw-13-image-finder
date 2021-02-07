@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wp_base</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Material+Icons"
+    />
+  </head>
+
+  <body>
+    <form class="search-form" id="search-form">
+      <input
+        type="text"
+        name="query"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+      <button type="submit" class="btn-form button" data-action="load-more">
+        Search
+      </button>
+    </form>
+
+    <ul class="gallery"></ul>
+    <button type="submit" class="btn button is-hidden" data-action="load-more">
+      Load more
+    </button>
+  </body>
+</html>
