@@ -1,6 +1,3 @@
-// const key = "16983876-2e0d7c5bd7f8d708e3eb2a9d0";
-// const BASE_URL = `https://pixabay.com/api/?image_type=photo&orientation=horizontal`;
-
 export default {
   key: "16983876-2e0d7c5bd7f8d708e3eb2a9d0",
   BASE_URL: `https://pixabay.com/api/?image_type=photo&orientation=horizontal`,
