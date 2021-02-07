@@ -8,7 +8,7 @@ import "@pnotify/core/dist/BrightTheme.css";
 import { search, matches } from "./js/notification.js";
 import { error } from "@pnotify/core/";
 
-function saerchImg(event) {
+function saerchImgHandler(event) {
   event.preventDefault();
   const form = event.currentTarget;
   apiService.query = form.elements.query.value;
@@ -16,7 +16,6 @@ function saerchImg(event) {
   if (refs.input.elements.query.value === "") {
     error(search);
   }
-
   apiService.resetPage();
 
   if (refs.input.elements.query.value !== "") {
@@ -46,5 +45,5 @@ function loadMoreHandler(event) {
   });
 }
 
-refs.input.addEventListener("submit", saerchImg);
+refs.input.addEventListener("submit", saerchImgHandler);
 refs.loadBtn.addEventListener("click", loadMoreHandler);
