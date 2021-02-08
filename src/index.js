@@ -13,15 +13,15 @@ function saerchImgHandler(event) {
   const form = event.currentTarget;
   apiService.query = form.elements.query.value;
   refs.gallery.innerHTML = "";
-  if (refs.input.elements.query.value === "") {
-    error(search);
-  }
+  refs.input.elements.query.value === "" ? error(search) : "";
+
   apiService.resetPage();
 
   if (refs.input.elements.query.value !== "") {
     apiService.fetchImage(apiService.query).then(({ hits }) => {
       makeGallery(hits);
       refs.loadBtn.classList.remove("is-hidden");
+      hits.length === 0;
       if (hits.length === 0) {
         error(matches);
         refs.loadBtn.classList.add("is-hidden");
@@ -33,7 +33,6 @@ function saerchImgHandler(event) {
 
 function loadMoreHandler(event) {
   event.preventDefault();
-
   apiService.fetchImage().then(({ hits }) => {
     makeGallery(hits);
 
